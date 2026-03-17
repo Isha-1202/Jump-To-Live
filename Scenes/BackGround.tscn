@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://dxgde702ybpjn"]
+
+[ext_resource type="Texture2D" uid="uid://bc0kmt1rhgagw" path="res://Pixel Adventure/Background/Yellow.png" id="1_nwjp1"]
+[ext_resource type="Texture2D" uid="uid://bvri2vdwh0ccw" path="res://Pixel Adventure/Background/Blue.png" id="1_ve3jq"]
+
+[node name="主场景" type="Node2D" unique_id=997353622]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1283493621]
+position = Vector2(573, 322)
+offset = Vector2(0, -0.025)
+
+[node name="Block" type="Sprite2D" parent="." unique_id=1948133159]
+position = Vector2(96.50001, 321.99997)
+scale = Vector2(2.9843752, 10.0625)
+texture = ExtResource("1_nwjp1")
+
+[node name="Block2" type="Sprite2D" parent="." unique_id=2082212942]
+position = Vector2(1057.75, 322)
+scale = Vector2(3.0546887, 10.0625)
+texture = ExtResource("1_nwjp1")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1151473602]
+
+[node name="BackGround" type="Sprite2D" parent="BG" unique_id=2035698374]
+position = Vector2(289.792, 96.00001)
+scale = Vector2(3.056, 3)
+texture = ExtResource("1_ve3jq")
+
+[node name="BackGround2" type="Sprite2D" parent="BG" unique_id=1250225485]
+position = Vector2(865.792, 96)
+scale = Vector2(3.056, 3)
+texture = ExtResource("1_ve3jq")
+
+[node name="BackGround3" type="Sprite2D" parent="BG" unique_id=2004863270]
+position = Vector2(673.792, 96)
+scale = Vector2(3.056, 3)
+texture = ExtResource("1_ve3jq")
+
+[node name="BackGround4" type="Sprite2D" parent="BG" unique_id=1303020993]
+position = Vector2(481.792, 96)
+scale = Vector2(3.056, 3)
+texture = ExtResource("1_ve3jq")
+
+[node name="BackGround5" type="Sprite2D" parent="BG" unique_id=1114532091]
+position = Vector2(289.792, 288)
+scale = Vector2(3.056, 3)
+texture = ExtResource("1_ve3jq")
+
+[node name="BackGround6" type="Sprite2D" parent="BG" unique_id=978582499]
+position = Vector2(865.792, 288)
+scale = Vector2(3.056, 3)
+texture = ExtResource("1_ve3jq")
+
+[node name="BackGround7" type="Sprite2D" parent="BG" unique_id=2093476637]
+position = Vector2(673.792, 288)
+scale = Vector2(3.056, 3)
+texture = ExtResource("1_ve3jq")
+
+[node name="BackGround8" type="Sprite2D" parent="BG" unique_id=845577093]
+position = Vector2(481.792, 288)
+scale = Vector2(3.056, 3)
+texture = ExtResource("1_ve3jq")
+
+[node name="BackGround9" type="Sprite2D" parent="BG" unique_id=277858728]
+position = Vector2(289.792, 479.99997)
+scale = Vector2(3.056, 3)
+texture = ExtResource("1_ve3jq")
+
+[node name="BackGround10" type="Sprite2D" parent="BG" unique_id=109474793]
+position = Vector2(865.792, 479.99997)
+scale = Vector2(3.056, 3)
+texture = ExtResource("1_ve3jq")
+
+[node name="BackGround11" type="Sprite2D" parent="BG" unique_id=61794558]
+position = Vector2(673.792, 479.99997)
+scale = Vector2(3.056, 3)
+texture = ExtResource("1_ve3jq")
+
+[node name="BackGround12" type="Sprite2D" parent="BG" unique_id=144125111]
+position = Vector2(481.792, 479.99997)
+scale = Vector2(3.056, 3)
+texture = ExtResource("1_ve3jq")
+
+[node name="BackGround13" type="Sprite2D" parent="BG" unique_id=1527727676]
+position = Vector2(289.792, 671.99994)
+scale = Vector2(3.056, 3)
+texture = ExtResource("1_ve3jq")
+
+[node name="BackGround14" type="Sprite2D" parent="BG" unique_id=479784284]
+position = Vector2(865.792, 671.99994)
+scale = Vector2(3.056, 3)
+texture = ExtResource("1_ve3jq")
+
+[node name="BackGround15" type="Sprite2D" parent="BG" unique_id=1255669562]
+position = Vector2(673.792, 671.99994)
+scale = Vector2(3.056, 3)
+texture = ExtResource("1_ve3jq")
+
+[node name="BackGround16" type="Sprite2D" parent="BG" unique_id=396082392]
+position = Vector2(481.792, 671.99994)
+scale = Vector2(3.056, 3)
+texture = ExtResource("1_ve3jq")
