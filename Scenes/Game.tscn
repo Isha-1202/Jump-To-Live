@@ -6,6 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://dixbpdasph30e" path="res://Scenes/player.tscn" id="3_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://d4ieiyv2ipfl3" path="res://Scenes/Blocks.tscn" id="4_kldst"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2bpf"]
+size = Vector2(64.335075, 64.397514)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lihs"]
+size = Vector2(65.47312, 64.397514)
+
 [node name="主场景" type="Node2D" unique_id=997353622 groups=["fruits"]]
 script = ExtResource("1_b2bpf")
 
@@ -13,15 +19,29 @@ script = ExtResource("1_b2bpf")
 position = Vector2(573, 322)
 offset = Vector2(0, -0.025)
 
-[node name="Wall" type="Sprite2D" parent="." unique_id=1948133159]
+[node name="Wall" type="StaticBody2D" parent="." unique_id=875693274]
 position = Vector2(96.50001, 321.99997)
 scale = Vector2(2.9843752, 10.0625)
+
+[node name="wall" type="Sprite2D" parent="Wall" unique_id=1496211714]
+scale = Vector2(1.0000001, 1)
 texture = ExtResource("1_gl6un")
 
-[node name="Wall2" type="Sprite2D" parent="." unique_id=2082212942]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" unique_id=466421354]
+position = Vector2(-0.16753769, 0.19875908)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_b2bpf")
+
+[node name="Wall2" type="StaticBody2D" parent="." unique_id=1064786089]
 position = Vector2(1057.75, 322)
 scale = Vector2(3.0546887, 10.0625)
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall2" unique_id=627468583]
 texture = ExtResource("1_gl6un")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" unique_id=1362687649]
+position = Vector2(0.73657227, 0.19875717)
+shape = SubResource("RectangleShape2D_7lihs")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=1151473602]
 
@@ -109,4 +129,4 @@ texture = ExtResource("2_j5yw3")
 position = Vector2(144, 296)
 
 [node name="Blocks" parent="." unique_id=1057384372 instance=ExtResource("4_kldst")]
-position = Vector2(192, 432)
+position = Vector2(200, 464)

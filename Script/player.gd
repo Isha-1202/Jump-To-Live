@@ -4,10 +4,13 @@ extends CharacterBody2D
 
 @export var animator : AnimatedSprite2D
 
+var air_jump = false#空中二段跳
+
 func _physics_process(delta: float) -> void:
 	_jump_and_fall(delta)
 	_handle_jump()
 	var direction := Input.get_axis("left", "right")
+	_handle_air_acceleration(direction, delta)
 	_axis_move(direction)
 	_animator_flip(direction)
 	#设置土狼时间
@@ -32,14 +35,20 @@ func _jump_and_fall(delta):
 #跳跃触发条件
 func _handle_jump():
 	# Handle jump.
+	if is_on_floor():
+		air_jump = true
+	
 	if is_on_floor() or $CoyoteTime.time_left > 0.0:
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = movement_data.jump_velocity
 	
-	#if not is_on_floor():
-		#if Input.is_action_just_pressed("jump") and velocity.y < movement_data.jump_velocity/2:
-			#velocity.y = movement_data.jump_velocity/2
-		
+	if not is_on_floor():
+		if Input.is_action_just_pressed("jump") and velocity.y < movement_data.jump_velocity/2:
+			velocity.y = movement_data.jump_velocity/2
+			#空中二段跳
+		if Input.is_action_just_pressed("jump") and air_jump:
+			velocity.y = movement_data.jump_velocity * 0.8
+			air_jump = false
 
 #水平移动
 func _axis_move(direction):
@@ -58,3 +67,7 @@ func _animator_flip(direction):
 	else:
 		animator.play("idle")
 	
+func _handle_air_acceleration(direction, delta):
+	if is_on_floor(): return 
+	if direction != 0:
+		velocity.x = move_toward(velocity.x,movement_data.speed * direction,movement_data.air_acceleration * delta)
