@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dfuypmvoxyiow"]
+
+[ext_resource type="Script" uid="uid://ddlh2e7wubvqe" path="res://start_menu.gd" id="1_juhg0"]
+
+[node name="CenterContainer" type="CenterContainer" unique_id=1385011666]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_juhg0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=402780951]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="StartGame" type="Button" parent="VBoxContainer" unique_id=1045776598]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "开始游戏"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=385502778]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "退出"
+
+[connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

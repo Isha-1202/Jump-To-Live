@@ -12,8 +12,10 @@ size = Vector2(64.335075, 64.397514)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lihs"]
 size = Vector2(65.47312, 64.397514)
 
-[node name="主场景" type="Node2D" unique_id=997353622 groups=["fruits"]]
+[node name="主场景" type="Node2D" unique_id=997353622 node_paths=PackedStringArray("score_label") groups=["fruits"]]
 script = ExtResource("1_b2bpf")
+block_scene = ExtResource("4_kldst")
+score_label = NodePath("CanvasLayer/Score")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1283493621]
 position = Vector2(573, 322)
@@ -129,4 +131,21 @@ texture = ExtResource("2_j5yw3")
 position = Vector2(144, 296)
 
 [node name="Blocks" parent="." unique_id=1057384372 instance=ExtResource("4_kldst")]
-position = Vector2(200, 464)
+position = Vector2(208, 464)
+
+[node name="Spawn_Blocks" type="Timer" parent="." unique_id=1114862553]
+wait_time = 2.0
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=33347430]
+
+[node name="Score" type="Label" parent="CanvasLayer" unique_id=530247736]
+custom_minimum_size = Vector2(0.575, 0)
+offset_left = 200.0
+offset_top = 16.0
+offset_right = 400.0
+offset_bottom = 64.0
+scale = Vector2(1.905, 1.905)
+text = "Score:"
+
+[connection signal="timeout" from="Spawn_Blocks" to="." method="_spawn_blocks_timeout"]
