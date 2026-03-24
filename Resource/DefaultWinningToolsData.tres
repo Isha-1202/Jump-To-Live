@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Winning_Tools_Data" format=3 uid="uid://dmp5f8aqpj7po"]
+
+[ext_resource type="Script" uid="uid://dgcng0kne6xjx" path="res://Script/Winning_Tools_Data.gd" id="1_ioecy"]
+
+[resource]
+script = ExtResource("1_ioecy")
+metadata/_custom_type_script = "uid://dgcng0kne6xjx"

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="TaskListData" format=3 uid="uid://hxk28o8kuybf"]
+
+[ext_resource type="Script" uid="uid://cxqej13alpt16" path="res://addons/to-do-list/data/task_data.gd" id="1_2iswm"]
+
+[resource]
+script = ExtResource("1_2iswm")
+tasks = [Dictionary[String, Variant]({
+"completed": true,
+"name": "增加时停道具"
+}), Dictionary[String, Variant]({
+"completed": true,
+"name": "增加重新进行游戏功能"
+}), Dictionary[String, Variant]({
+"completed": false,
+"name": "增加开始倒计时"
+}), Dictionary[String, Variant]({
+"completed": false,
+"name": "平台随时间推移上升速度变快"
+}), Dictionary[String, Variant]({
+"completed": false,
+"name": "过20s全屏随机刷新时停道具"
+})]

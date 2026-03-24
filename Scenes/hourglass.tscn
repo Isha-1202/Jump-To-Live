@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://hi73d06vkjeo"]
+
+[ext_resource type="Script" uid="uid://cg7745dua0qqc" path="res://Script/hourglass.gd" id="1_6iimn"]
+[ext_resource type="Texture2D" uid="uid://pliivebpgh7f" path="res://Assets/Pixel Adventure/Items/Fruits/Bananas.png" id="1_6xuos"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iimn"]
+atlas = ExtResource("1_6xuos")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rm2be"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6iimn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_16xga"]
+radius = 7.036009
+
+[node name="Hourglass" type="Area2D" unique_id=956679623]
+script = ExtResource("1_6iimn")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=624081969]
+position = Vector2(61, 58.5)
+scale = Vector2(1.565, 1.565)
+sprite_frames = SubResource("SpriteFrames_rm2be")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1148510676]
+position = Vector2(61, 58.5)
+scale = Vector2(1.565, 1.565)
+shape = SubResource("CircleShape2D_16xga")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://xpcfpo63gnnf"]
 
-[ext_resource type="Texture2D" uid="uid://o64uir3hb3c7" path="res://Pixel Adventure/Items/Fruits/Apple.png" id="1_nl1ql"]
+[ext_resource type="Texture2D" uid="uid://o64uir3hb3c7" path="res://Assets/Pixel Adventure/Items/Fruits/Apple.png" id="1_nl1ql"]
 [ext_resource type="Script" uid="uid://c8kf5xc28p58l" path="res://Script/fruits.gd" id="2_cwlsl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cthyg"]

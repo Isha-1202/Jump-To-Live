@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://ohep1a08lsbo"]
 
 [ext_resource type="Script" uid="uid://b5q2csbqyc7ej" path="res://Script/GameManager.gd" id="1_b2bpf"]
-[ext_resource type="Texture2D" uid="uid://bc0kmt1rhgagw" path="res://Pixel Adventure/Background/Yellow.png" id="1_gl6un"]
-[ext_resource type="Texture2D" uid="uid://bvri2vdwh0ccw" path="res://Pixel Adventure/Background/Blue.png" id="2_j5yw3"]
+[ext_resource type="Texture2D" uid="uid://bc0kmt1rhgagw" path="res://Assets/Pixel Adventure/Background/Yellow.png" id="1_gl6un"]
+[ext_resource type="Texture2D" uid="uid://bvri2vdwh0ccw" path="res://Assets/Pixel Adventure/Background/Blue.png" id="2_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://dixbpdasph30e" path="res://Scenes/player.tscn" id="3_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://d4ieiyv2ipfl3" path="res://Scenes/Blocks.tscn" id="4_kldst"]
+[ext_resource type="PackedScene" uid="uid://ck6u28xq2k2r3" path="res://Scenes/continue_menu.tscn" id="5_2irst"]
+[ext_resource type="PackedScene" uid="uid://hi73d06vkjeo" path="res://Scenes/hourglass.tscn" id="5_fgofq"]
+[ext_resource type="Script" uid="uid://bxm06g1jc07x5" path="res://Script/time_manager.gd" id="6_7lihs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2bpf"]
 size = Vector2(64.335075, 64.397514)
@@ -78,7 +81,7 @@ scale = Vector2(3.056, 3)
 texture = ExtResource("2_j5yw3")
 
 [node name="BackGround7" type="Sprite2D" parent="BG" unique_id=2093476637]
-position = Vector2(673.792, 288)
+position = Vector2(672, 288)
 scale = Vector2(3.056, 3)
 texture = ExtResource("2_j5yw3")
 
@@ -127,14 +130,23 @@ position = Vector2(481.792, 671.99994)
 scale = Vector2(3.056, 3)
 texture = ExtResource("2_j5yw3")
 
+[node name="ContinueMenu" parent="." unique_id=1974393764 instance=ExtResource("5_2irst")]
+offset_left = 416.0
+offset_top = 216.0
+offset_right = 724.0
+offset_bottom = 418.0
+
+[node name="Hourglass" parent="." unique_id=956679623 instance=ExtResource("5_fgofq")]
+position = Vector2(520, 376)
+
 [node name="player" parent="." unique_id=23268531 instance=ExtResource("3_j5yw3")]
-position = Vector2(144, 296)
+position = Vector2(192, 368)
 
 [node name="Blocks" parent="." unique_id=1057384372 instance=ExtResource("4_kldst")]
 position = Vector2(208, 464)
 
 [node name="Spawn_Blocks" type="Timer" parent="." unique_id=1114862553]
-wait_time = 2.0
+wait_time = 1.391
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=33347430]
@@ -148,4 +160,9 @@ offset_bottom = 64.0
 scale = Vector2(1.905, 1.905)
 text = "Score:"
 
+[node name="time_manager" type="Timer" parent="." unique_id=441839460]
+one_shot = true
+script = ExtResource("6_7lihs")
+
 [connection signal="timeout" from="Spawn_Blocks" to="." method="_spawn_blocks_timeout"]
+[connection signal="timeout" from="time_manager" to="time_manager" method="_on_timeout"]

@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://d4ieiyv2ipfl3"]
 
-[ext_resource type="Texture2D" uid="uid://bmpq2lsqteydw" path="res://pixel-platformer-blocks/Tilemap/small_sand_packed.png" id="1_0oded"]
+[ext_resource type="Texture2D" uid="uid://bmpq2lsqteydw" path="res://Assets/pixel-platformer-blocks/Tilemap/small_sand_packed.png" id="1_0oded"]
 [ext_resource type="Script" uid="uid://donyaxtlxravn" path="res://Script/blocks.gd" id="1_cthyg"]
 [ext_resource type="Script" uid="uid://6oyd5uat25jh" path="res://Script/PlayerMovementData.gd" id="2_p52ej"]
 [ext_resource type="PackedScene" uid="uid://xpcfpo63gnnf" path="res://Scenes/fruits.tscn" id="2_vf3am"]
 
-[sub_resource type="Resource" id="Resource_xagor"]
+[sub_resource type="Resource" id="Resource_p52ej"]
 script = ExtResource("2_p52ej")
+acceleration = 1000
 metadata/_custom_type_script = "uid://6oyd5uat25jh"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0oded"]
@@ -14,7 +15,7 @@ size = Vector2(144, 48)
 
 [node name="Blocks" type="AnimatableBody2D" unique_id=215743932 groups=["blocks"]]
 script = ExtResource("1_cthyg")
-movement_data = SubResource("Resource_xagor")
+movement_data = SubResource("Resource_p52ej")
 
 [node name="Blocks" type="Sprite2D" parent="." unique_id=2101994106]
 

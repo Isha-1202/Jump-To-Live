@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dxgde702ybpjn"]
 
-[ext_resource type="Texture2D" uid="uid://bc0kmt1rhgagw" path="res://Pixel Adventure/Background/Yellow.png" id="1_nwjp1"]
-[ext_resource type="Texture2D" uid="uid://bvri2vdwh0ccw" path="res://Pixel Adventure/Background/Blue.png" id="1_ve3jq"]
+[ext_resource type="Texture2D" uid="uid://bc0kmt1rhgagw" path="res://Assets/Pixel Adventure/Background/Yellow.png" id="1_nwjp1"]
+[ext_resource type="Texture2D" uid="uid://bvri2vdwh0ccw" path="res://Assets/Pixel Adventure/Background/Blue.png" id="1_ve3jq"]
 
 [node name="主场景" type="Node2D" unique_id=997353622]
 

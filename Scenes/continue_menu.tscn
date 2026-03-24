@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://ck6u28xq2k2r3"]
+
+[ext_resource type="Script" uid="uid://b7ynphs1q3uv6" path="res://container_continue.gd" id="1_8jq3n"]
+[ext_resource type="Texture2D" uid="uid://bc0kmt1rhgagw" path="res://Assets/Pixel Adventure/Background/Yellow.png" id="1_w16ld"]
+[ext_resource type="Script" uid="uid://ce33ccu7xwpq6" path="res://Script/continue_menu.gd" id="2_8jq3n"]
+
+[node name="ContinueMenu" type="CenterContainer" unique_id=1974393764]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_8jq3n")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1229595851]
+visible = false
+position = Vector2(576, 325.99997)
+scale = Vector2(17.875, 10.0625)
+texture = ExtResource("1_w16ld")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1622667250]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ContinueButton" type="Button" parent="VBoxContainer" unique_id=559907156]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "重新开始"
+script = ExtResource("2_8jq3n")
+
+[node name="ReturnButton" type="Button" parent="VBoxContainer" unique_id=711288878]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "回到主菜单"
+
+[connection signal="pressed" from="VBoxContainer/ContinueButton" to="VBoxContainer/ContinueButton" method="_continue_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/ReturnButton" to="VBoxContainer/ContinueButton" method="_on_return_button_pressed"]
